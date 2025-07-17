@@ -1,0 +1,85 @@
+<template>
+    <lightning-card title="Create Record using Wire">
+        <div class="slds-p-around_small">
+            <lightning-combobox 
+                label="Parent Account"
+                name="parentacc"
+                value={parentValue}
+                options={parentOptions}
+                placeholder="select Parent account"
+                onchange={handlechange}
+                required="true"
+                message-when-value-missing="please select parent Account"
+                class="validateme">
+            </lightning-combobox>
+
+            <lightning-input 
+                placeholder="please enter Account Name"
+                onchange={handlechange}
+                name="accountName"
+                label="Account Name"
+                type="text"
+                required
+                message-when-value-missing="please enter Account Name"
+                min-length="2"
+                max-length="60"
+                message-when-too-short="Minimum length of Account Name is 2"
+                message-when-too-long="Maximum length of Account Name is 60"
+                class="validateme">
+            </lightning-input>
+
+            <lightning-input 
+                type="Date"
+                label="SLA Expiration Date"
+                placeholder="please enter sla date"
+                name="sladate"
+                onchange={handlechange}
+                >
+            </lightning-input>
+            <template lwc:if={slaOptions.data}>
+                <lightning-radio-group
+                    type="button"
+                    label="SLA Type"
+                    name="slatype"
+                    options={slaOptions.data.values}
+                    onchange={handlechange}
+                    value={SLAType}
+                    >
+                </lightning-radio-group>
+            </template>
+            <lightning-slider
+                label="No of Locations"
+                min="1"
+                max="50"
+                step="1"
+                onchange={handlechange}
+                value={selectednooflocations}
+                name="nooflocations"
+                class="slds-p-around_small">
+            </lightning-slider>
+
+            <lightning-input-rich-text
+                name="desname"
+                label="Description"
+                onchange={handlechange}
+                value={desvalu}
+                class="slds-p-around_small"
+                disabled-categories="FORMAT_FONT"></lightning-input-rich-text>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button
+                label="Save"
+                onclick={savehandler}
+                variant="brand"
+                class="slds-p-around_small"
+                >
+            </lightning-button>
+            <lightning-button 
+                label="Cancle"
+                onclick={canclehandler}
+                variant="destructive"
+                class="slds-p-around_small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
