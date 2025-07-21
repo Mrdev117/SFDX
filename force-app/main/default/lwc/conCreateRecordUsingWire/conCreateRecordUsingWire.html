@@ -1,0 +1,72 @@
+<template>
+    <lightning-card title="Create Contact Record using CRED">
+        <div class="slds-p-around_small">
+            <lightning-combobox 
+                label="select Parent account"
+                options={paretnOptions}
+                value={parentvalue}
+                placeholder="select parent name"
+                required
+                name="accname"
+                onchange={handlechange}
+                class="validate">
+            </lightning-combobox>
+            <lightning-input 
+                label="First Name"
+                name="confname"
+                onchange={handlechange}
+                value={conFname}
+                min="2"
+                max="50"
+                placeholder="enter contact name"
+                class="validate"
+                message-when-value-missing="Please enter valid contact Name">
+            </lightning-input>
+            <lightning-input 
+                label="Last Name"
+                name="conname"
+                onchange={handlechange}
+                value={conLname}
+                required
+                min="2"
+                max="50"
+                placeholder="enter contact name"
+                class="validate"
+                message-when-value-missing="Please enter valid contact Name">
+            </lightning-input>
+            <lightning-input 
+                type="tel"
+                label="Phone"
+                value={phoneval}
+                onchange={handlechange}
+                name="phone"
+                max="10"
+                placeholder="enter phone number"
+                message-when-value-missing="please enter phone number">
+            </lightning-input>
+            <lightning-input
+                type="email"
+                label="Email"
+                value={emailvalue}
+                name="emailname"
+                onchange={handlechange}
+                placeholder="enter email"
+                message-when-pattern-mismatch="Please enter email in patteren formate">
+            </lightning-input>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button 
+                label="Save"
+                variant="brand"
+                onclick={SaveClick}
+                class="slds-p-around_small">
+            </lightning-button>
+            <lightning-button
+                label="cancle"
+                variant="destructive"
+                onclick={cancleclick}
+                class="slds-p-around_small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,78 @@
+<template>
+    <lightning-card title="CRED Operations using Wire" icon-name="custom:custom15">
+        <div class="slds-p-around_small">
+            <lightning-combobox
+                label="Select Parent Account"
+                options={parentOptions}
+                value={parentValue}
+                name="parentName"
+                onchange={handleChange}
+                required="true"
+                placeholder="select parent account"
+                message-when-value-missing="Please select parent account"
+                class="validateme">
+            </lightning-combobox>
+            <lightning-input
+                label="Account Name"
+                required="true"
+                name="accName"
+                value={accName}
+                message-when-value-missing="Please ente Account Name"
+                placeholder="enter Account Name"
+                onchange={handleChange}
+                min-length="2"
+                max-length="60"
+                message-when-too-short="Minimum Length of Account Name is 2"
+                message-when-too-long="Maximum length of Account Name is 60"
+                class="validateme">
+            </lightning-input>
+            <lightning-input
+                type="Date"
+                label="SLA Expiration date"
+                name="sladate"
+                onchange={handleChange}
+                value={SlaDate}>
+            </lightning-input>
+            <template lwc:if={slaoptions}>
+                <lightning-radio-group
+                    type="button"
+                    label="SLA Type"
+                    value={SLAtype}
+                    name="slatype"
+                    options={slaoptions}
+                    onchange={handleChange}>
+                </lightning-radio-group>
+            </template>
+            <lightning-slider 
+                label="No of Locations"
+                name="locationname"
+                value={selectednooflocations}
+                onchange={handleChange}
+                step="1"
+                min="1"
+                max="50">
+            </lightning-slider> <br>
+            <lightning-input-rich-text
+                label="Description"
+                value={Desvalue}
+                onchange={handleChange}
+                name="Desname">
+            </lightning-input-rich-text>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button
+                label="Save"
+                variant="brand"
+                onclick={saveclick}
+                disabled={isdisabeld}
+                class="slds-p-around_small">
+            </lightning-button>
+            <lightning-button 
+                label="Cancle"
+                variant="destructive"
+                onclick={cancleclick}
+                class="slds-p-around_small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

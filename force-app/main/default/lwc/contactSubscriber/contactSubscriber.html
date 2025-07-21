@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Selected contact Subscription">
+        <template lwc:if={pubMessage}>
+                        <img src={pubMessage.PhotoUrl}/>
+                        <p>{pubMessage.Name}</p>
+                        <p>{pubMessage.Title}</p>
+                        <lightning-formatted-email value={pubMessage.Email}></lightning-formatted-email> <br/>
+                        <lightning-formatted-phone value={pubMessage.Phone}></lightning-formatted-phone>
+                    </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Get Records UI api">
+        <div class="slds-m-around_medium">
+            <template lwc:if={outputs}>
+                <template for:each={outputs.results} for:item="output">
+                    <ul key={output.result.id}>
+                        <li>{output.result.fields.Name.value}</li>
+                    </ul>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

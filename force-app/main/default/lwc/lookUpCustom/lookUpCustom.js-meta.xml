@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets><target>lightning__AppPage</target></targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property 
+                name="apiName" 
+                type="String" 
+                required="true"
+                default="Contact"
+                label="Enter Object Api Name:" />
+                <property 
+                    name="objectLabel" 
+                    type="String"
+                    required="true"
+                    default="Contact"
+                    label="Enter Object label" />
+                    <property 
+                    name="iconName" 
+                    type="String"
+                    required="true"
+                    default="standard:contact"
+                    description="check SLDS for more info on icons"
+                    label="Ente Icon Name for Object" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

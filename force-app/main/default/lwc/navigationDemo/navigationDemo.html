@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Navigations">
+        <div class="slds-m-around_medium">
+            <lightning-button
+                    label="Navigate to home" 
+                    variant="brand"
+                    onclick={navigatehomehandler}>
+            </lightning-button>&nbsp;
+            <lightning-button
+                    label="Account list view" 
+                    variant="brand-outline"
+                    onclick={acclistview}>
+            </lightning-button>&nbsp;
+            <lightning-button
+                    label="create Account" 
+                    variant="brand"
+                    onclick={createacc}>
+            </lightning-button>
+            <lightning-button 
+                    label="navigate"
+                    variant="destructive"
+                    onclick={clickhandler}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

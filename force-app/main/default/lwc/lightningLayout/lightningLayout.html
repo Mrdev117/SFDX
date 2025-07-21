@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Lightning Layout Demo">
+        <div class="slds-p-around_small">
+            <lightning-layout pull-to-boundary="medium">
+                <lightning-layout-item padding="around-small" size="6">
+                    <lightning-record-form
+                            object-api-name={account}
+                            fields={fields}
+                            mode="edit">
+                    </lightning-record-form>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6">
+                    <!-- <template lwc:if={accounts}>
+                        <template for:each={accounts} for:item="acc">
+                            <div key={acc.Id}>
+                                <p>{acc.Industry}</p>
+                            </div>
+                        </template>
+                    </template> -->
+                    <lightning-record-form 
+                                object-api-name={contact}
+                                fields={fields2}
+                                mode="edit">
+                    </lightning-record-form>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
