@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Contact list">
+        <div class="slds-p-around_small">
+            <lightning-layout vertical-align="stretch">
+                <lightning-layout-item padding="around-small" size="6">
+                    <template lwc:if={condata}>
+                        <template for:each={condata} for:item="con">
+                            <c-contact-item 
+                                contact = {con}
+                                key={con.Id}
+                                onsampleevent={parenthandler}></c-contact-item>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6">
+                    <template lwc:if={selectedId}>
+                        <img src={selectedId.PhotoUrl}/>
+                        <p>{selectedId.Name}</p>
+                        <p>{selectedId.Title}</p>
+                        <lightning-formatted-email value={selectedId.Email}></lightning-formatted-email> <br/>
+                        <lightning-formatted-phone value={selectedId.Phone}></lightning-formatted-phone>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div> 
+    </lightning-card>
+</template>
