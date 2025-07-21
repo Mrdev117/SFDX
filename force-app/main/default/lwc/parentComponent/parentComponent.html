@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Communication between Child to Parent">
+        <div class="slds-p-around_small">
+            <template lwc:if={displayMessage}>
+                <p>Welcome to Lwc bootcamp</p>
+            </template>
+        </div>
+        <div class="slds-p-around_small">
+            <c-child-component onsampleevent={handler}></c-child-component>
+        </div>
+    </lightning-card>
+</template>

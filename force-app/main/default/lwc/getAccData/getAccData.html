@@ -1,0 +1,16 @@
+<template>
+    <!-- <lightning-card title="Account data">
+        <c-display-data accounts={accountList}></c-display-data>
+    </lightning-card> -->
+
+    <lightning-card title="Account Detail Data">
+        <lightning-input 
+            label="search" 
+            placeholder="enter some text" 
+            onchange={handlekeyup}>
+        </lightning-input>
+        <div>
+            <c-display-data keys={searchterm}></c-display-data>
+        </div>
+    </lightning-card>
+</template>

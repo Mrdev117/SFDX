@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Account List - GraphQL">
+        <template if:true={accountData}>
+            <template for:each={accountData} for:item="acc">
+                <p key={acc.id}>{acc.name}</p>
+            </template>
+        </template>
+
+        <template if:true={hasError}>
+            <p class="slds-text-color_error">Error loading data</p>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Get Picklist values">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                    label="Industry"
+                    value={industryvalue}
+                    options={industryoptions}
+                    name="Induatry"
+                    placeholder="select Industry"
+                    onchange={handlechange}>
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+    <lightning-card title="get Picklist values by Record type">
+        <div class="slds-m-around_small">
+            <template lwc:if={RatingOptions}>
+                <lightning-combobox
+                        label="Rating"
+                        value={Ratingvalue}
+                        options={RatingOptions}
+                        placeholder="select Rating value"
+                        name="Rating"
+                        onchange={handlechange}>
+                </lightning-combobox>
+            </template>
+            <template lwc:if={Active}>
+                <lightning-combobox
+                        label="Active"
+                        value={Activevalue}
+                        options={Active}
+                        placeholder="select Active value"
+                        name="Active"
+                        onchange={handlechange}>
+                </lightning-combobox>
+            </template>
+            <template lwc:if={CustomerPriorityoptions}>
+                <lightning-combobox
+                        label="CustomerPriority"
+                        value={CustomerPriorityvalue}
+                        options={CustomerPriorityoptions}
+                        placeholder="select CustomerPriority"
+                        name="customer"
+                        onchange={handlechange}></lightning-combobox>
+            </template>
+        </div>
+    </lightning-card>
+</template>

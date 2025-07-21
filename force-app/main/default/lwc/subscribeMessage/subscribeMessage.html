@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Subscribe channle">
+        <div class="slds-p-around_small">
+            <p>{reciveMessage}</p>
+        </div>
+            <lightning-button 
+                label="unsubscribe"
+                variant="destructive"
+                onclick={handlerUnsubscribe}
+                class="slds-p-around_small"
+                disabled={isUnsubscribebutton}>
+            </lightning-button>
+        
+    </lightning-card>
+</template>

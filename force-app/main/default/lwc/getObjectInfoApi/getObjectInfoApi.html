@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Get Object Info Api">
+        <div class="slds-m-around_medium">
+            <template lwc:if={accountinfo}>
+                <div class="slds-var-p-around_small">
+                    <p>account api Name : {accountinfo.apiName}</p>
+                    <p>acc default record type Id : {accountinfo.defaultRecordTypeId}</p>
+                </div>
+                <div class="slds-var-p-around_small">
+                    <p><strong>Child Relationships</strong></p>
+                    <template for:each={accountinfo.childRelationships} for:item="rel">
+                        <ul key={rel.childObjectApiName}>
+                            <li>{rel.childObjectApiName}</li>
+                        </ul>
+                    </template>
+                </div>
+            </template>
+            <template lwc:elseif={accerror}>
+                <c-error-panel errors = {accerror}></c-error-panel>
+            </template>
+        </div>
+    </lightning-card>
+</template>

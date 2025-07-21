@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Parent to child communication">
+        <div class="slds-p-around_small">
+            <lightning-record-form
+                        object-api-name={Account}
+                        fields={fields}
+                        mode="edit">
+            </lightning-record-form>
+            <lightning-button label="child fields"
+                            variant="brand"
+                            onclick={childclick}>
+            </lightning-button>
+        </div>
+        <div class="slds-p-around_small">
+            <template lwc:if={confiels}>
+                 <c-p-toc-communication-child></c-p-toc-communication-child>
+            </template>          
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Account & Contact Lookup">
+        <!-- Account Search -->
+        <lightning-input 
+            label="Search Account"
+            value={accountSearchKey}
+            onchange={handleAccountSearch}>
+        </lightning-input>
+
+        <!-- Account Results -->
+        <template if:true={accountResults.length}>
+            <ul class="dropdown">
+                <template for:each={accountResults} for:item="acc">
+                    <li key={acc.Id} onclick={handleAccountSelect}>
+                        {acc.Name}
+                    </li>
+                </template>
+            </ul>
+        </template>
+
+        <!-- Contact Search (no typing needed) -->
+        <lightning-input 
+            label="Related Contact"
+            onfocus={handleContactFocus}
+            disabled={isContactDisabled}>
+        </lightning-input>
+
+        <!-- Contact Results -->
+        <template if:true={contactResults.length}>
+            <ul class="dropdown">
+                <template for:each={contactResults} for:item="con">
+                    <li key={con.Id}>{con.Name}</li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>
