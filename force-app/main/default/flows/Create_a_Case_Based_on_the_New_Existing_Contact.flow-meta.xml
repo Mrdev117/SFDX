@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <name>CreateNewContact</name>
+        <choiceText>Create New Contact</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>CreateNewContact</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>UseExistingContact</name>
+        <choiceText>Use Existing Contact</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>UseExistingContact</stringValue>
+        </value>
+    </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <name>DC01_Rought_the_user_to_correct_screen</name>
+        <label>DC01: Rought the user to correct screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Create_New_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Select_Option</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>CreateNewContact</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Create New Contact</label>
+        </rules>
+        <rules>
+            <name>Use_Existing_contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Select_Option</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>UseExistingContact</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Use Existing contact</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Create a Case Based on the New/Existing Contact {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create a Case Based on the New/Existing Contact</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Options_Screen_for_Contact</name>
+        <label>Options Screen for Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>DC01_Rought_the_user_to_correct_screen</targetReference>
+        </connector>
+        <fields>
+            <name>Select_Option</name>
+            <choiceReferences>CreateNewContact</choiceReferences>
+            <choiceReferences>UseExistingContact</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Select Option</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Options_Screen_for_Contact</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>
