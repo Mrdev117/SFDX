@@ -37,9 +37,39 @@ public with sharing class LwcController {
     }
 
     @AuraEnabled(cacheable = true)
-    public static list<Account> getConDetails(){
+    public static list<Account> getAccData(String inputIndustry){
         try {
-            return [select Id, Name from Account WITH USER_MODE];
+            return [select Id, Name, Industry, Rating from Account
+            where Industry = : inputIndustry WITH USER_MODE];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    @AuraEnabled
+    public static String updateaccount(String recordId, String newTicker)
+    {
+        Account acc = new Account(Id = recordId, TickerSymbol = newTicker);
+        try {
+            update acc;
+            return 'Success';
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+
+    @AuraEnabled(cacheable = true)
+    public static String getProfiles()
+    {
+        return [select Id, Profile.Name from User where Id = : UserInfo.getUserId()].Profile.Name;
+
+    }
+
+    @AuraEnabled
+    public static list<Contact> getCons(Id acId){
+        try {
+            return [select ID, FirstName, LastName, Phone, Email from Contact where AccountId =: acId
+            ORDER BY CreatedDate ASC Limit 1];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
