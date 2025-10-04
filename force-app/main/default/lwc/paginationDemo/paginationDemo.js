@@ -20,5 +20,7 @@ export default class PaginationDemo extends LightningElement {
     {
         this.visibleContacts = [...event.detail.records];
         console.log(event.detail.records);
+        console.log('Hi')
     }
+
 }
