@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>WelcomeMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WelcomeMessage</shortDescription>
+        <value>Have a great Day, Make it great day</value>
+    </labels>
+    <labels>
+        <fullName>greetings</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>greetings</shortDescription>
+        <value>Welcome to the worst world</value>
+    </labels>
+    <labels>
+        <fullName>restricted_profile</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>restricted profile</shortDescription>
+        <value>Standard User,Marketing User</value>
+    </labels>
+</CustomLabels>

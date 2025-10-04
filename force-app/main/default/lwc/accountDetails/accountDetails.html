@@ -1,5 +1,5 @@
 <template>
-    <lightning-card title="Create Record using Wire">
+    <lightning-card title={formTitle}>
         <div class="slds-p-around_small">
             <lightning-combobox 
                 label="Parent Account"
@@ -20,6 +20,7 @@
                 label="Account Name"
                 type="text"
                 required
+                value={accName}
                 message-when-value-missing="please enter Account Name"
                 min-length="2"
                 max-length="60"
@@ -34,7 +35,7 @@
                 placeholder="please enter sla date"
                 name="sladate"
                 onchange={handlechange}
-                >
+                value={slaDate}>
             </lightning-input>
             <template lwc:if={slaOptions.data}>
                 <lightning-radio-group
@@ -64,7 +65,8 @@
                 onchange={handlechange}
                 value={desvalu}
                 class="slds-p-around_small"
-                disabled-categories="FORMAT_FONT"></lightning-input-rich-text>
+                disabled-categories="FORMAT_FONT">
+            </lightning-input-rich-text>
         </div>
         <div class="slds-align_absolute-center">
             <lightning-button
@@ -77,9 +79,17 @@
             <lightning-button 
                 label="Cancle"
                 onclick={canclehandler}
-                variant="destructive"
+                variant="brand-outline"
                 class="slds-p-around_small">
             </lightning-button>
+            <template lwc:if={isDeletebutton}>
+                <lightning-button 
+                    label="Delete Record"
+                    variant="destructive"
+                    onclick={Deletehandler}
+                    class="slds-p-around_small">
+                </lightning-button>
+            </template>
         </div>
     </lightning-card>
 </template>

@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="calculator">
+        <div class="slds-p-around_small">
+            <lightning-button 
+                label="Add"
+                name="add"
+                variant="brand"
+                onclick={handleclick}
+                class="slds-p-around_small">
+            </lightning-button>
+            <lightning-button 
+                label="Sub"
+                name="sub"
+                variant="destructive"
+                onclick={handleclick}
+                class="slds-p-around_small">
+            </lightning-button>
+            <lightning-button 
+                label="Mul"
+                name="mul"
+                variant="brand-outline"
+                onclick={handleclick}
+                class="slds-p-around_small">
+            </lightning-button>
+            <lightning-button 
+                label="Div"
+                name="div"
+                variant="brand"
+                onclick={handleclick}
+                class="slds-p-around_small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

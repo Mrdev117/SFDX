@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Lightning-record Picker" icon-name="custom:custom1">
+        <div class="slds-m-around_small">
+            <div class="slds-grid slds-gutter">
+                <div class="slds-col">
+                    <div class="slds-p-around_small">
+                        <lightning-record-picker 
+                            label="Accounts"
+                            object-api-name="Account"
+                            onchange={handlechage}
+                            value={selectedAccId}>
+                        </lightning-record-picker>
+                    </div>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-p-around_small">
+                         <lightning-record-picker 
+                            label="Contacts"
+                            object-api-name="Contact"
+                            filter={filter}>
+                        </lightning-record-picker>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

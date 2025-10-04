@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="calculator" icon-name="custom:custom2">
+        <div class="slds-m-around_small">
+            <lightning-input 
+                type="number"
+                label="number1"
+                name="number1"
+                onchange={changehandler}
+                value={firstnum}>
+            </lightning-input>
+            <lightning-input 
+                label="number2"
+                name="number2"
+                type="number"
+                value={secondnum}
+                onchange={changehandler}>
+            </lightning-input>
+        </div>
+        <div class="slds-p-around_small">
+            <lightning-input 
+                type="number"
+                label="Result"
+                value={result}
+                onchange={changehandler}
+                name="result"
+                disabled></lightning-input>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button
+                label="Add"
+                variant="brand"
+                onclick={addhandler}
+                class="slds-p-around_x-small">
+            </lightning-button>
+            <lightning-button
+                class="slds-p-around_x-small"
+                label="sub"
+                variant="destructive"
+                onclick={subhandler}>
+            </lightning-button>
+            <lightning-button 
+                label="Mul"
+                variant="brand-outline"
+                onclick={mulhandler}
+                class="slds-p-around_x-small">
+            </lightning-button>
+            <lightning-button
+                label="div"
+                variant="brand"
+                onclick={divhandler}
+                class="slds-p-around_x-small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

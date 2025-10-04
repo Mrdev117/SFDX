@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Update Account Ticker using Imparitive">
+        <div class="slds-p-around_small">
+            <lightning-input 
+                read-only="true"
+                label="Account Name"
+                value={accName}>
+            </lightning-input>
+            <lightning-input 
+                label="Acc Ticker"
+                value={tickerValue}
+                onchange={changeHandler}>
+            </lightning-input>
+        </div>
+        <div class="slds-p-around_small">
+            <lightning-button 
+                label="update acc"
+                variant="brand"
+                onclick={handleclick}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

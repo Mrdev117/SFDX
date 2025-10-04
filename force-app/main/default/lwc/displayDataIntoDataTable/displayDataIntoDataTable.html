@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="get data using wire">
+        <div class="slds-p-around_small">
+            <template lwc:if={IndustryOptions}>
+                <lightning-combobox
+                    label="Account Industry"
+                    options={IndustryOptions}
+                    value={selectedIndustry}
+                    onchange={handlechange}>
+                </lightning-combobox>
+            </template>
+        </div>
+        <div class="slds-p-around_small">
+            <lightning-button 
+                label="call apex"
+                variant="brand"
+                onclick={clickhandler}>
+            </lightning-button>
+        </div>
+        <div style="height: 300px;" class="slds-p-around_small">
+            <lightning-datatable 
+                key-field="id"
+                data={acdata}
+                columns={accColumns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

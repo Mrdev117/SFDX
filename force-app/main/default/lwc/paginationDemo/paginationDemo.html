@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Pagination" icon-name="custome:custome10">
+        <div class="slds-p-around_small">
+            <template lwc:if={totalaccounts}>
+                <template for:each={totalaccounts} for:item="acc">
+                    <p key={acc.Id}>
+                        {acc.Name}
+                    </p>
+                </template>
+            </template>
+            <div slot="footer" class="slds-m-horizontal_medium">
+                <c-pagination records={totalaccounts} onupdate={updateAccHandler}></c-pagination>
+            </div>
+        </div>
+    </lightning-card>   
+</template>

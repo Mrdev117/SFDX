@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Imparitive Apex Demo">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_6-of-12">
+                    <div>
+                        <template lwc:if={IndustryOption}>
+                            <lightning-combobox
+                                label="Account Industry"
+                                options={IndustryOption}
+                                value={selectedIndustry}
+                                onchange={handlechange}>
+                            </lightning-combobox>
+                        </template>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="slds-p-around_small">
+                        <lightning-button 
+                            label="load acc data"
+                            variant="brand"
+                            onclick={buttonhandler}>
+                        </lightning-button>
+                    </div>
+                    <div style="height: 300px;" class="slds-p-around_small">
+                        <lightning-datatable 
+                            key-field="id"
+                            data={data}
+                            columns={columns}>
+                        </lightning-datatable>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </lightning-card>
+</template>
