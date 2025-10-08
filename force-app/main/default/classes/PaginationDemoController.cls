@@ -9,7 +9,7 @@ public with sharing class PaginationDemoController {
     @AuraEnabled(cacheable = true)
     public static list<Contact> getContacts()
     {
-        list<Contact> conlist = [select Id, Name, Email, Phone, Department from Contact];
+        list<Contact> conlist = [select Id, LastName, FirstName, Email, Phone, Department from Contact];
         return conlist;
     }
 } 
