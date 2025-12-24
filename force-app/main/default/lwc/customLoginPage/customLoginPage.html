@@ -1,0 +1,36 @@
+<template>
+    <div class="login-container">
+        <lightning-card title="Salesforce">
+            <div class="slds-p-around_medium">
+                <lightning-input
+                    label="Email/UserName"
+                    type="email"
+                    value={email}
+                    onchange={handlechange}
+                    data-id="email">
+                </lightning-input>
+                <lightning-input
+                    label="Password"
+                    type="password"
+                    value={password}
+                    onchange={handlechange}
+                    data-id="password">
+                </lightning-input>
+                <div class="slds-p-around_small">
+                    <lightning-button
+                        label="Login"
+                        variant="brand"
+                        onclick={handleclick}>
+                    </lightning-button>
+                </div>
+                <div class="additional-links">
+                    <a href="/ForgotPassword">ForgotPassword?</a>
+                    <a href="/SelfRegister">Sign Up</a>
+                </div>
+                <template lwc:if={error}>
+                    <div class="error-message">{error}</div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>
